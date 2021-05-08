@@ -4,117 +4,160 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Cairo:wght@200&family=Nanum+Gothic&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Chess Board</title>
   </head>
   <body>
-    <header><h1>Lars Chess Adventure</h1></header>
-    <div class="container">
-      <div class="top">
-        <div class="inner-container-top">
-          <div class="box-inner">A</div>
-          <div class="box-inner">B</div>
-          <div class="box-inner">C</div>
-          <div class="box-inner">D</div>
-          <div class="box-inner">E</div>
-          <div class="box-inner">F</div>
-          <div class="box-inner">G</div>
-          <div class="box-inner">H</div>
+    <header>
+      <h1>Web-Dev Gambit</h1>
+    </header>
+
+    <main>
+      <section class="animation">
+        <div class="moewen">
+          <img src="./images/moewen/ostwind_1.svg" alt="moewen" />
         </div>
-        <!--   <div class="inner-container-left">
-          <div class="box-inner">1</div>
-          <div class="box-inner">2</div>
-          <div class="box-inner">3</div>
-          <div class="box-inner">4</div>
-          <div class="box-inner">5</div>
-          <div class="box-inner">6</div>
-          <div class="box-inner">7</div>
-          <div class="box-inner">8</div>
-        </div> -->
-      </div>
-      <div class="box turm_b"></div>
-      <div class="box pferd_b"></div>
-      <div class="box laeufer_b"></div>
-      <div class="box koenig_b"></div>
-      <div class="box dame_b"></div>
-      <div class="box lauefer_b"></div>
-      <div class="box pferd_b"></div>
-      <div class="box turm_b"></div>
+        <div class="bulli">
+          <img src="./images/bulli/bulli-rl.png" alt="bulli" width="130px" />
+        </div>
+      </section>
 
-      <div class="box bauer_1b"></div>
-      <div class="box bauer_2b"></div>
-      <div class="box bauer_3b"></div>
-      <div class="box bauer_4b"></div>
-      <div class="box bauer_5b"></div>
-      <div class="box bauer_6b"></div>
-      <div class="box bauer_7b"></div>
-      <div class="box bauer_8b"></div>
+      <div class="board">
+        <!--? Kopfzeile A B C D R etc. Horizontal ________________________ -->
+        <div class="top">
+          <div class="top-letters"><p>A</p></div>
+          <div class="top-letters"><p>B</p></div>
+          <div class="top-letters"><p>C</p></div>
+          <div class="top-letters"><p>D</p></div>
+          <div class="top-letters"><p>E</p></div>
+          <div class="top-letters"><p>F</p></div>
+          <div class="top-letters"><p>G</p></div>
+          <div class="top-letters"><p>H</p></div>
+        </div>
+        <!--? Side  1 2 3 4 5 etc. Vertikal ______________________________ -->
+        <div class="left">
+          <div class="left-number"><p>1</p></div>
+          <div class="left-number"><p>2</p></div>
+          <div class="left-number"><p>3</p></div>
+          <div class="left-number"><p>4</p></div>
+          <div class="left-number"><p>5</p></div>
+          <div class="left-number"><p>6</p></div>
+          <div class="left-number"><p>7</p></div>
+          <div class="left-number"><p>8</p></div>
+        </div>
+        <!--? Fields ------------------------------------->
+        <div class="fields">
+          <!--? First Row ______________________________ -->
+          <div class="field"><span>&#9820;</span></div>
+          <div class="field"><span>&#9822;</span></div>
+          <div class="field"><span>&#9821;</span></div>
+          <div class="field"><span>&#9819;</span></div>
+          <div class="field"><span>&#9818;</span></div>
+          <div class="field"><span>&#9821;</span></div>
+          <div class="field"><span>&#9822;</span></div>
+          <div class="field"><span>&#9820;</span></div>
 
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
+          <!--? Second Row ______________________________ -->
+          <div class="field"><span>&#9823;</span></div>
+          <div class="field"><span>&#9823;</span></div>
+          <div class="field"><span>&#9823;</span></div>
+          <div class="field"><span>&#9823;</span></div>
+          <div class="field"><span>&#9823;</span></div>
+          <div class="field"><span>&#9823;</span></div>
+          <div class="field"><span>&#9823;</span></div>
+          <div class="field"><span>&#9823;</span></div>
 
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
+          <!--? Third Row ______________________________ -->
 
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <!--? Fourth Row ______________________________ -->
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
 
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
-      <div class="box"></div>
+          <!--? Fifth Row ______________________________ -->
 
-      <div class="box bauer_w"></div>
-      <div class="box bauer_w"></div>
-      <div class="box bauer_w"></div>
-      <div class="box bauer_w"></div>
-      <div class="box bauer_w"></div>
-      <div class="box bauer_w"></div>
-      <div class="box bauer_w"></div>
-      <div class="box bauer_w"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
 
-      <div class="box turm_w"></div>
-      <div class="box pferd_w"></div>
-      <div class="box laeufer_w"></div>
-      <div class="box koenig_w"></div>
-      <div class="box dame_w"></div>
-      <div class="box laeufer_w"></div>
-      <div class="box pferd_w"></div>
-      <div class="box turm_w"></div>
-      <div class="bottom">
-        <div class="inner-container-top">
-          <div class="box-inner">A</div>
-          <div class="box-inner">B</div>
-          <div class="box-inner">C</div>
-          <div class="box-inner">D</div>
-          <div class="box-inner">E</div>
-          <div class="box-inner">F</div>
-          <div class="box-inner">G</div>
-          <div class="box-inner">H</div>
+          <!--? Sixth Row ______________________________ -->
+
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+          <div class="field"></div>
+
+          <!--? Seventh Row ______________________________ -->
+          <div class="field"><span>&#9817;</span></div>
+          <div class="field"><span>&#9817;</span></div>
+          <div class="field"><span>&#9817;</span></div>
+          <div class="field"><span>&#9817;</span></div>
+          <div class="field"><span>&#9817;</span></div>
+          <div class="field"><span>&#9817;</span></div>
+          <div class="field"><span>&#9817;</span></div>
+          <div class="field"><span>&#9817;</span></div>
+
+          <!--? Eighth Row ______________________________ -->
+          <div class="field"><span>&#9814;</span></div>
+          <div class="field"><span>&#9816;</span></div>
+          <div class="field"><span>&#9815;</span></div>
+          <div class="field"><span>&#9813;</span></div>
+          <div class="field"><span>&#9812; </span></div>
+          <div class="field"><span>&#9815;</span></div>
+          <div class="field"><span>&#9816;</span></div>
+          <div class="field"><span>&#9814;</span></div>
+        </div>
+
+        <!--? Side  A B C D  etc. Horizontal _______________ -->
+        <div class="bottom">
+          <div class="bottom-letters"><p>A</p></div>
+          <div class="bottom-letters"><p>B</p></div>
+          <div class="bottom-letters"><p>C</p></div>
+          <div class="bottom-letters"><p>D</p></div>
+          <div class="bottom-letters"><p>E</p></div>
+          <div class="bottom-letters"><p>F</p></div>
+          <div class="bottom-letters"><p>G</p></div>
+          <div class="bottom-letters"><p>H</p></div>
+        </div>
+        <!--? Side  1 2 3 4 5 etc. Vertikal _____________ -->
+        <div class="right">
+          <div class="right-number"><p>1</p></div>
+          <div class="right-number"><p>2</p></div>
+          <div class="right-number"><p>3</p></div>
+          <div class="right-number"><p>4</p></div>
+          <div class="right-number"><p>5</p></div>
+          <div class="right-number"><p>6</p></div>
+          <div class="right-number"><p>7</p></div>
+          <div class="right-number"><p>8</p></div>
         </div>
       </div>
-    </div>
+    </main>
   </body>
 </html>

@@ -1,301 +1,202 @@
+:root {
+  font-size: 62.5%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  margin: 40px;
-  background-color: #5d5d5d;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  font-size: 1.5rem;
+  background-image: url(./images/glas_motiv_skyline_hamburg.jpg);
 }
 
 header {
-  background-color: #0e2433;
-  margin: 10px auto;
-  max-width: 54.2%;
-  height: 100px;
-}
-h1 {
-  text-align: center;
-  padding: 20px;
-  color: white;
+  margin: 0 auto;
+  width: 900px;
+  background-color: #000;
+  top: 0%;
 }
 
-.container {
-  border: 120px solid #0e2433;
-  width: 960px;
+h1 {
+  color: aliceblue;
+  text-align: center;
+  font-size: 3rem;
+  padding: 3.2rem;
+  font-family: "Anton", sans-serif;
+}
+
+main {
+  margin: 0px auto;
+  width: 900px;
+  height: 100vh;
+}
+
+/* ? Animations Background / Icon   */
+
+.moewen img {
+  position: absolute;
+  top: 30%;
+  left: 5%;
+  animation-name: moewen;
+  animation-duration: 6s;
+  width: 10%;
+  animation-delay: 1s;
+
+  /* cubic-bezier(1,.02,.4,.57); */
+}
+
+@keyframes moewen {
+  0% {
+    width: 10%;
+    opacity: 0;
+    animation-delay: 10s;
+  }
+
+  100% {
+    width: 20%;
+    transform: translate(300px, -530px);
+    rotate: 120%;
+  }
+}
+
+.bulli {
+  position: absolute;
+  top: 47.5%;
+  right: 10%;
+  rotate: 23deg;
+  animation-name: bulli;
+  animation-duration: 4s;
+}
+
+@keyframes bulli {
+  0% {
+    transform: translate(0px) rotate(0deg);
+  }
+
+  25% {
+    transform: translate(-150px, 60px) rotate(-10deg)
+    opacity: 2;
+  }
+
+  50% {
+    transform: translate(-150px, 70px) rotate(-10deg)
+    opacity: 2;
+  }
+
+  /* 75% {
+    transform: translate(-200px, -15px) rotate(-8deg);
+  } */
+
+  100% {
+    transform: translate(-450px, 80px) rotate(-25deg);
+    opacity: 0;
+  }
+}
+
+/* ? The whole Board itself ---------------------------------------?  */
+.board {
   margin: 0 auto;
   display: grid;
-  grid-gap: 0;
-  grid-template-columns: repeat(8, 120px);
-  grid-template-rows: 40px repeat(8, 120px) 40px;
+  width: 900px;
+  grid-template-columns: 50px 1fr 50px;
+  grid-template-rows: 50px 1fr 50px;
   grid-auto-flow: row;
+  grid-auto-flow: column;
+  background-color: #000;
 }
-.inner-container-top {
+
+/* ? Top & Bottom Row/Column  ----------------------------------------------?  */
+
+.top,
+.bottom,
+.left,
+.right {
+  background-color: #000;
   display: grid;
   grid-gap: 0;
   grid-template-columns: repeat(8, auto);
   grid-template-rows: auto;
   grid-auto-flow: row;
-  align-items: strech;
-}
-
-.box {
-  padding: 20px;
-  background-color: white;
-  color: #000;
-}
-.box-inner {
-  text-align: center;
-  align-self: center;
-}
-.top,
-.bottom {
-  display: grid;
   align-items: stretch;
-  background-color: #296d98;
 }
+
 .top {
-  grid-column-start: 1;
-  grid-column-end: 9;
-  grid-row-start: 1;
-  grid-row-end: 1;
+  grid-area: 1 / 2 / 2 / 3;
 }
 .bottom {
-  grid-column-start: 1;
-  grid-column-end: 9;
-  grid-row-start: 10;
-  grid-row-end: 10;
+  grid-area: 3/2 / 4 / 3;
 }
 
-.turm_b {
-  background-image: url(./images/black/turm.png);
-  background-position: center;
-  background-size: 5rem;
-  background-repeat: no-repeat;
-}
-.pferd_b {
-  background-image: url(./images/black/pferd.png);
-  background-position: center;
-  background-size: 5rem;
-  background-repeat: no-repeat;
-}
-.laeufer_b {
-  background-image: url(./images/black/lauefer.png);
-  background-position: center;
-  background-size: 6.5rem;
-  background-repeat: no-repeat;
-}
-.koenig_b {
-  background-image: url(./images/black/koenig_b.png);
-  background-position: center;
-  background-size: 6rem;
-  background-repeat: no-repeat;
-}
-.dame_b {
-  background-image: url(./images/black/dame-b.jpg);
-  background-position: center;
-  background-size: 7rem;
-  background-repeat: no-repeat;
+.top-letters,
+.bottom-letters {
+  text-align: center;
+  color: #fff;
 }
 
-.bauer_1b {
-  background-image: url(./images/black/bauer_b.png);
-  background-position: center;
-  background-size: 5rem;
-  background-repeat: no-repeat;
-}
-.bauer_2b {
-  background-image: url(./images/black/bauer_b.png);
-  background-position: center;
-  background-size: 5rem;
-  background-repeat: no-repeat;
-}
-.bauer_3b {
-  background-image: url(./images/black/bauer_b.png);
-  background-position: center;
-  background-size: 5rem;
-  background-repeat: no-repeat;
-}
-.bauer_4b {
-  background-image: url(./images/black/bauer_b.png);
-  background-position: center;
-  background-size: 5rem;
-  background-repeat: no-repeat;
-}
-.bauer_5b {
-  background-image: url(./images/black/bauer_b.png);
-  background-position: center;
-  background-size: 5rem;
-  background-repeat: no-repeat;
-}
-.bauer_6b {
-  background-image: url(./images/black/bauer_b.png);
-  background-position: center;
-  background-size: 5rem;
-  background-repeat: no-repeat;
-  animation-name: bauer_6b;
+/* ? Left / Right  ----------------------------------------------?  */
+
+.left,
+.right {
+  display: grid;
+  grid-gap: ;
+  grid-template-rows: repeat(8, 100px);
+  grid-template-columns: auto;
+  grid-auto-flow: column;
+  align-items: stretch;
 }
 
-.bauer_6b:hover {
-  background-image: url(./images/black/bauer_b.png);
-  background-position: center;
-  background-size: 5rem;
-  background-repeat: no-repeat;
-  animation-name: bauer_6b;
-  animation-duration: 2s;
+.left {
+  grid-area: 2 / 1 / 3 /2;
 }
 
-.bauer_7b {
-  background-image: url(./images/black/bauer_b.png);
-  background-position: center;
-  background-size: 5rem;
-  background-repeat: no-repeat;
-}
-.bauer_8b {
-  background-image: url(./images/black/bauer_b.png);
-  background-position: center;
-  background-size: 5rem;
-  background-repeat: no-repeat;
+.right {
+  grid-area: 2 / 3 / 3 / 4;
 }
 
-.bauer_w {
-  background-image: url(./images/white/bauer_w.png);
-  background-position: center;
-  background-size: 5rem;
-  background-repeat: no-repeat;
+.left-number,
+.right-number {
+  align-self: center;
+  text-align: center;
+  color: #fff;
 }
 
-.turm_w {
-  background-image: url(./images/white/turm_w.png);
-  background-position: center;
-  background-size: 5rem;
-  background-repeat: no-repeat;
-}
-.pferd_w {
-  background-image: url(./images/white/pferd_w.png);
-  background-position: center;
-  background-size: 5rem;
-  background-repeat: no-repeat;
-}
-.laeufer_w {
-  background-image: url(./images/white/laeufer_w.png);
-  background-position: center;
-  background-size: 5rem;
-  background-repeat: no-repeat;
-}
-.koenig_w {
-  background-image: url(./images/white/koenig_w.png);
-  background-position: center;
-  background-size: 5rem;
-  background-repeat: no-repeat;
-}
-.dame_w {
-  background-image: url(./images/white/dame_w.png);
-  background-position: center;
-  background-size: 5rem;
-  background-repeat: no-repeat;
+/* ? Board Fields  ----------------------------------------------?  */
+
+.fields {
+  display: grid;
+  grid-template-rows: repeat(8, 100px);
+  grid-template-columns: repeat(8, 100px);
+  grid-auto-flow: column;
+  grid-auto-flow: row;
+
+  grid-area: 2 /2 / 10 / 10;
 }
 
-.box:nth-child(-2n + 9),
-.box:nth-child(9) ~ div:nth-child(-2n + 16),
-.box:nth-child(17) ~ div:nth-child(-2n + 25),
-.box:nth-child(25) ~ div:nth-child(-2n + 32),
-.box:nth-child(33) ~ div:nth-child(-2n + 41),
-.box:nth-child(41) ~ div:nth-child(-2n + 48),
-.box:nth-child(49) ~ div:nth-child(-2n + 57),
-.box:nth-child(57) ~ div:nth-child(-2n + 64) {
-  background-color: lightseagreen;
+.field {
+  display: grid;
+  background-color: grey;
+  color: #000;
+  border: 1px solid black;
+  align-items: center;
+  justify-items: center;
 }
 
-@keyframes bauer_6b {
-  from {
-    background-color: magenta;
-  }
-  to {
-    background-color: yellow;
-  }
+.field:nth-child(-2n + 7),
+.field:nth-child(9) ~ div:nth-child(-2n + 16),
+.field:nth-child(16) ~ div:nth-child(-2n + 23),
+.field:nth-child(25) ~ div:nth-child(-2n + 32),
+.field:nth-child(32) ~ div:nth-child(-2n + 39),
+.field:nth-child(41) ~ div:nth-child(-2n + 48),
+.field:nth-child(48) ~ div:nth-child(-2n + 55),
+.field:nth-child(57) ~ div:nth-child(-2n + 64) {
+  background-color: #fff;
 }
 
-@keyframes box2 {
-  from {
-    background-color: green;
-  }
-  to {
-    background-color: lightgoldenrodyellow;
-  }
-}
+/* ? Chess Figures */
 
-@keyframes box3 {
-  from {
-    width: 25px;
-  }
-
-  to {
-    background-image: url(./images/tennis-ball.png);
-  }
-}
-
-@keyframes lars {
-  0% {
-    background-image: url(./images/Lars.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-size: 3rem;
-  }
-
-  50% {
-    background-image: url(./images/Lars.png);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-size: 8rem;
-  }
-
-  100% {
-    background-image: url(./images/biber.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-size: 8rem;
-  }
-}
-
-@keyframes maggie {
-  0% {
-    background-image: url(./images/maggie.jpeg);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-size: 3rem;
-  }
-
-  50% {
-    background-image: url(./images/maggie.jpeg);
-    background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-size: 8rem;
-  }
-
-  100% {
-    background-image: url(./images/biber.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-}
-
-@keyframes springer {
-  0% {
-    background-image: url(./images/springer_illustration_trans_grande.webp);
-    background-position: center;
-    background-size: contain;
-  }
-
-  50% {
-    background-image: url(./images/springer_illustration_trans_grande.webp);
-    background-position: center;
-    background-size: contain;
-  }
-
-  100% {
-    background-image: url(./images/springer_illustration_trans_grande.webp);
-    background-position: center;
-    background-size: contain;
-  }
+.field span {
+  font-size: 8rem;
 }

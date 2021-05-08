@@ -1,0 +1,112 @@
+body {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+table {
+  height: 850px;
+  width: 850px;
+  border: #7a5242 solid 50px;
+  border-collapse: separate;
+}
+td {
+  width: 100px;
+  height: 100px;
+}
+.white {
+  background-color: rgb(179, 154, 13);
+  border: none;
+}
+.black {
+  background-color: #4a2b27;
+  border: none;
+}
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  height: 100%;
+  color: white;
+  font-size: 2rem;
+  border: solid red 2px;
+}
+.name:hover {
+  opacity: 100%;
+}
+tr span {
+  font-size: 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bottom span {
+  color: white;
+}
+.black:hover,
+.white:hover {
+  cursor: pointer;
+  transform: scale(2.4, 2.4);
+  transition: 0.3s;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px black;
+}
+.black:active,
+.white:active {
+  animation: scale-up-center 0.2s cubic-bezier(0.39, 0.575, 0.565, 1) reverse
+    both;
+  animation: scale-up-center 0.2s cubic-bezier(0.39, 0.575, 0.565, 1) reverse
+    both;
+}
+@keyframes scale-up-center {
+  0% {
+    -webkit-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+/* .section {
+  animation: section 4s;
+}
+@keyframes section {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100;
+  }
+}
+.img {
+  position: absolute;
+  animation: rotate 3s both;
+}
+@keyframes rotate {
+  0% {
+    rotate: 0deg;
+    opacity: 100;
+  }
+  100% {
+    rotate: 360deg;
+    opacity: 0;
+  }
+} */
+.horse {
+  border: solid red 3px;
+  animation: horse 3s cubic-bezier(0.12, 2.04, 0.87, -1.52) forwards;
+  animation-iteration-count: 1;
+}
+@keyframes horse {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(400px, 400px);
+  }
+}
