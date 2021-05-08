@@ -4,13 +4,125 @@
   padding: 0;
 }
 
+/* ? Countdown --------------------------------------- */
+
+
+.number-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(90deg, rgba(6,6,18,1) 0%, rgba(63,63,70,1) 35%, rgba(193,193,200,1) 100%); 
+}
+
+.number-circle {
+  position: relative;
+  display: flex;
+ justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  border: 10px solid #fff ;
+  border-radius: 50%;
+}
+
+.countdown span {
+  font-family: "Orbitron";
+  color: #fff;
+  font-size: 12rem;
+}
+
+.countdown3 {
+  animation-name: countdown3;
+  animation-duration: 0.5s;
+  opacity: 0;
+}
+
+@keyframes countdown3 {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.countdown2 {
+  animation-name: countdown3;
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+@keyframes countdown2 {
+  0% {
+    opacity:1; 
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.countdown1 {
+  animation-name: countdown3;
+  animation-duration: 0.5s;
+  animation-delay: 1s;
+  opacity: 0;
+  
+}
+
+@keyframes countdown1 {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.countdown0 {
+  animation-name: countdown3;
+  animation-duration: 2s;
+  animation-delay: 1.5s;
+  opacity: 0;
+  
+}
+
+@keyframes countdown0 {
+  0% {
+    opacity:1;
+  }
+  
+  100% {
+    opacity: 1;
+  }
+}
+
+#countdown0 {
+  animation-name: countdown3;
+  animation-duration: 3s;
+  animation-delay: 3s;
+  opacity: 0;
+  
+}
+
+@keyframes countdown0 {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ? Chess Board and Content ------------------- */
+
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  position: relative;
-  font-size: 1.5rem;
-  background-image: url(./images/glas_motiv_skyline_hamburg.jpg);
+  font-size: 2rem;
+  
 }
 
 header {
@@ -23,18 +135,24 @@ header {
 h1 {
   color: aliceblue;
   text-align: center;
-  font-size: 3rem;
+  font-size: 5rem;
   padding: 3.2rem;
-  font-family: "Anton", sans-serif;
+  font-family: "Italiana", sans-serif;
 }
 
 main {
   margin: 0px auto;
-  width: 900px;
+  width: 100vw;
   height: 100vh;
+  position: relative;
+  background-image: url(./images/glas_motiv_skyline_hamburg.jpg);
 }
 
 /* ? Animations Background / Icon   */
+.animmation {
+  position: relative;
+}
+
 
 .moewen img {
   position: absolute;
@@ -44,8 +162,6 @@ main {
   animation-duration: 6s;
   width: 10%;
   animation-delay: 1s;
-
-  /* cubic-bezier(1,.02,.4,.57); */
 }
 
 @keyframes moewen {
@@ -69,6 +185,7 @@ main {
   rotate: 23deg;
   animation-name: bulli;
   animation-duration: 4s;
+  animation-delay: 4s;
 }
 
 @keyframes bulli {
@@ -80,22 +197,36 @@ main {
     transform: translate(-150px, 60px) rotate(-10deg)
     opacity: 2;
   }
-
   50% {
     transform: translate(-150px, 70px) rotate(-10deg)
     opacity: 2;
   }
-
-  /* 75% {
-    transform: translate(-200px, -15px) rotate(-8deg);
-  } */
-
   100% {
     transform: translate(-450px, 80px) rotate(-25deg);
     opacity: 0;
   }
 }
 
+.boat {
+  position: absolute;
+  bottom: 10%;
+  left: 1%;
+  animation-name: boat;
+  animation-duration: 4s;
+  animation-delay: 1s;
+}
+
+@keyframes boat {
+  0% {
+    transform: translate(200px)
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(1550px);
+    opacity: 0;
+  }
+  
+}
 /* ? The whole Board itself ---------------------------------------?  */
 .board {
   margin: 0 auto;
@@ -105,7 +236,7 @@ main {
   grid-template-rows: 50px 1fr 50px;
   grid-auto-flow: row;
   grid-auto-flow: column;
-  background-color: #000;
+ /*  background-color: #000; */
 }
 
 /* ? Top & Bottom Row/Column  ----------------------------------------------?  */
@@ -195,8 +326,48 @@ main {
   background-color: #fff;
 }
 
-/* ? Chess Figures */
+/* ? Chess Figures ---------------------------------*/
 
 .field span {
   font-size: 8rem;
 }
+
+/* ? Moving Figures ---------------------------------*/
+
+.bauerd2 span {
+  animation-name: bauerd2;
+  animation-duration: 3s;
+}
+
+@keyframes bauerd2 {
+  0% {transform: translate(0px);
+  }
+  100% {transform: translateY(200px);
+  }
+}
+
+.laeuferc1 span {
+  animation-name: laeuferc1;
+  animation-duration: 3s;
+  animation-delay: 2s;
+}
+
+@keyframes laeuferc1 {
+  0% {transform: translate(0px);
+  }
+  100% {transform: translate(305px, 305px);
+  }
+}
+
+
+
+
+
+.slide-fwd-center {opacity: 0;}
+.slide-fwd-center:hover {animation:slide-fwd-center .45s cubic-bezier(.25,.46,.45,.94) both;
+opacity: 1;}
+
+
+@keyframes slide-fwd-center{
+  0%{transform:translateZ(0); font-size: 0;}
+100%{transform:translateZ(160px); font-size: 16rem;color: rgb(26, 56, 68);}}
