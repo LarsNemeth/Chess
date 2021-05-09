@@ -4,126 +4,14 @@
   padding: 0;
 }
 
-/* ? Countdown --------------------------------------- */
-
-
-.number-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: linear-gradient(90deg, rgba(6,6,18,1) 0%, rgba(63,63,70,1) 35%, rgba(193,193,200,1) 100%); 
-}
-
-.number-circle {
-  position: relative;
-  display: flex;
- justify-content: center;
-  align-items: center;
-  width: 500px;
-  height: 500px;
-  border: 10px solid #fff ;
-  border-radius: 50%;
-}
-
-.countdown span {
-  font-family: "Orbitron";
-  color: #fff;
-  font-size: 12rem;
-}
-
-.countdown3 {
-  animation-name: countdown3;
-  animation-duration: 0.5s;
-  opacity: 0;
-}
-
-@keyframes countdown3 {
-  0% {
-    opacity:1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.countdown2 {
-  animation-name: countdown3;
-  animation-duration: 0.5s;
-  animation-delay: 0.5s;
-  opacity: 0;
-}
-
-@keyframes countdown2 {
-  0% {
-    opacity:1; 
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.countdown1 {
-  animation-name: countdown3;
-  animation-duration: 0.5s;
-  animation-delay: 1s;
-  opacity: 0;
-  
-}
-
-@keyframes countdown1 {
-  0% {
-    opacity:1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.countdown0 {
-  animation-name: countdown3;
-  animation-duration: 2s;
-  animation-delay: 1.5s;
-  opacity: 0;
-  
-}
-
-@keyframes countdown0 {
-  0% {
-    opacity:1;
-  }
-  
-  100% {
-    opacity: 1;
-  }
-}
-
-#countdown0 {
-  animation-name: countdown3;
-  animation-duration: 3s;
-  animation-delay: 3s;
-  opacity: 0;
-  
-}
-
-@keyframes countdown0 {
-  0% {
-    opacity:1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-/* ? Chess Board and Content ------------------- */
-
 body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-size: 2rem;
-  
 }
+
+/* ? Simple Header  ------------------------------*/
 
 header {
   margin: 0 auto;
@@ -137,22 +25,20 @@ h1 {
   text-align: center;
   font-size: 5rem;
   padding: 3.2rem;
-  font-family: "Italiana", sans-serif;
+  font-family: "Orbitron", sans-serif;
 }
 
+/* ? Main Start -------------------------------------------- */
 main {
-  margin: 0px auto;
-  width: 100vw;
-  height: 100vh;
-  position: relative;
   background-image: url(./images/glas_motiv_skyline_hamburg.jpg);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
 }
 
-/* ? Animations Background / Icon   */
-.animmation {
-  position: relative;
-}
-
+/* ? Animations Background / Icon  -------------------------- */
 
 .moewen img {
   position: absolute;
@@ -161,7 +47,7 @@ main {
   animation-name: moewen;
   animation-duration: 6s;
   width: 10%;
-  animation-delay: 1s;
+  animation-delay: 10s;
 }
 
 @keyframes moewen {
@@ -178,14 +64,14 @@ main {
   }
 }
 
-.bulli {
+.bulli img {
   position: absolute;
   top: 47.5%;
   right: 10%;
   rotate: 23deg;
   animation-name: bulli;
   animation-duration: 4s;
-  animation-delay: 4s;
+  animation-delay: 14s;
 }
 
 @keyframes bulli {
@@ -194,12 +80,12 @@ main {
   }
 
   25% {
-    transform: translate(-150px, 60px) rotate(-10deg)
-    opacity: 2;
+    transform: translate(-150px, 60px) rotate(-10deg);
+    opacity: 1;
   }
   50% {
-    transform: translate(-150px, 70px) rotate(-10deg)
-    opacity: 2;
+    transform: translate(-150px, 70px) rotate(-10deg);
+    opacity: 1;
   }
   100% {
     transform: translate(-450px, 80px) rotate(-25deg);
@@ -213,30 +99,53 @@ main {
   left: 1%;
   animation-name: boat;
   animation-duration: 4s;
-  animation-delay: 1s;
+  animation-delay: 11s;
 }
 
 @keyframes boat {
   0% {
-    transform: translate(200px)
+    transform: translate(200px);
     opacity: 0;
   }
   100% {
     transform: translateX(1550px);
     opacity: 0;
   }
-  
 }
 /* ? The whole Board itself ---------------------------------------?  */
 .board {
-  margin: 0 auto;
+  position: realtive;
+  margin: 0px auto;
   display: grid;
   width: 900px;
   grid-template-columns: 50px 1fr 50px;
   grid-template-rows: 50px 1fr 50px;
   grid-auto-flow: row;
   grid-auto-flow: column;
- /*  background-color: #000; */
+  background-color: #000;
+  animation-name: board;
+  animation-duration: 15s;
+  animation-delay: 10s;
+  z-index: 2;
+}
+
+@keyframes board {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    z-index: 2;
+  }
 }
 
 /* ? Top & Bottom Row/Column  ----------------------------------------------?  */
@@ -247,7 +156,7 @@ main {
 .right {
   background-color: #000;
   display: grid;
-  grid-gap: 0;
+  grid-gap: 0px;
   grid-template-columns: repeat(8, auto);
   grid-template-rows: auto;
   grid-auto-flow: row;
@@ -258,7 +167,7 @@ main {
   grid-area: 1 / 2 / 2 / 3;
 }
 .bottom {
-  grid-area: 3/2 / 4 / 3;
+  grid-area: 3/2 / 4 / 4;
 }
 
 .top-letters,
@@ -302,7 +211,7 @@ main {
   grid-template-columns: repeat(8, 100px);
   grid-auto-flow: column;
   grid-auto-flow: row;
-
+  background-color: #fff;
   grid-area: 2 /2 / 10 / 10;
 }
 
@@ -340,9 +249,11 @@ main {
 }
 
 @keyframes bauerd2 {
-  0% {transform: translate(0px);
+  0% {
+    transform: translate(0px);
   }
-  100% {transform: translateY(200px);
+  100% {
+    transform: translateY(200px);
   }
 }
 
@@ -353,21 +264,153 @@ main {
 }
 
 @keyframes laeuferc1 {
-  0% {transform: translate(0px);
+  0% {
+    transform: translate(0px);
   }
-  100% {transform: translate(305px, 305px);
+  100% {
+    transform: translate(400px, 400px);
   }
 }
 
+.slide-fwd-center {
+  opacity: 0;
+  background-color: aqua;
+}
+.slide-fwd-center:hover {
+  animation: slide-fwd-center 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  opacity: 1;
+}
 
+@keyframes slide-fwd-center {
+  0% {
+    transform: translateZ(0);
+    font-size: 0;
+  }
+  100% {
+    transform: translateZ(160px);
+    font-size: 20rem;
+    color: rgb(26, 61, 71);
+  }
+}
 
+/* ? Countdown --------------------------------------- */
 
+.number-container {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    90deg,
+    rgba(6, 6, 18, 1) 0%,
+    rgba(63, 63, 70, 1) 35%,
+    rgba(193, 193, 200, 1) 100%
+  );
+  opacity: 1;
+  animation-name: countdown;
+  animation-duration: 6s;
+}
 
-.slide-fwd-center {opacity: 0;}
-.slide-fwd-center:hover {animation:slide-fwd-center .45s cubic-bezier(.25,.46,.45,.94) both;
-opacity: 1;}
+@keyframes countdown {
+  0% {
+    opacity: 1;
+    z-index: 2;
+  }
+  25% {
+    opacity: 1;
+    z-index: 2;
+  }
+  100% {
+    opacity: 1;
+    z-index: 2;
+  }
+  100% {
+    opacity: 0;
+    z-index: 1;
+  }
+}
 
+.number-circle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  border: 10px solid #fff;
+  border-radius: 50%;
+}
 
-@keyframes slide-fwd-center{
-  0%{transform:translateZ(0); font-size: 0;}
-100%{transform:translateZ(160px); font-size: 16rem;color: rgb(26, 56, 68);}}
+.countdown span {
+  font-family: "Orbitron";
+  color: #fff;
+  font-size: 12rem;
+}
+
+.countdown3 {
+  animation-name: countdown3;
+  animation-duration: 0.5s;
+  opacity: 0;
+}
+
+@keyframes countdown3 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.countdown2 {
+  animation-name: countdown3;
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+@keyframes countdown2 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.countdown1 {
+  animation-name: countdown3;
+  animation-duration: 0.5s;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+@keyframes countdown1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.countdown0 {
+  animation-name: countdown3;
+  animation-duration: 3s;
+  animation-delay: 1.5s;
+  opacity: 0;
+}
+
+@keyframes countdown0 {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
