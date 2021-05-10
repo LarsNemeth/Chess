@@ -36,6 +36,7 @@ main {
   width: 100%;
   height: 100%;
   z-index: 3;
+  opacity: 1;
 }
 
 /* ? Animations Background / Icon  -------------------------- */
@@ -81,15 +82,12 @@ main {
 
   25% {
     transform: translate(-150px, 60px) rotate(-10deg);
-    opacity: 1;
   }
   50% {
     transform: translate(-150px, 70px) rotate(-10deg);
-    opacity: 1;
   }
   100% {
     transform: translate(-450px, 80px) rotate(-25deg);
-    opacity: 0;
   }
 }
 
@@ -99,17 +97,15 @@ main {
   left: 1%;
   animation-name: boat;
   animation-duration: 4s;
-  animation-delay: 11s;
+  animation-delay: 5s;
 }
 
 @keyframes boat {
   0% {
-    transform: translate(200px);
-    opacity: 0;
+    transform: translate(0);
   }
   100% {
     transform: translateX(1550px);
-    opacity: 0;
   }
 }
 /* ? The whole Board itself ---------------------------------------?  */
@@ -127,26 +123,18 @@ main {
   animation-duration: 15s;
   animation-delay: 10s;
   z-index: 2;
+  opacity: 1;
 }
-
+/* 
 @keyframes board {
   0% {
     opacity: 0;
   }
-  25% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  75% {
-    opacity: 0;
-  }
   100% {
-    opacity: 1;
+    
     z-index: 2;
   }
-}
+} */
 
 /* ? Top & Bottom Row/Column  ----------------------------------------------?  */
 
@@ -246,6 +234,7 @@ main {
 .bauerd2 span {
   animation-name: bauerd2;
   animation-duration: 3s;
+  animation-delay: 5s;
 }
 
 @keyframes bauerd2 {
@@ -260,7 +249,7 @@ main {
 .laeuferc1 span {
   animation-name: laeuferc1;
   animation-duration: 3s;
-  animation-delay: 2s;
+  animation-delay: 7s;
 }
 
 @keyframes laeuferc1 {
@@ -310,7 +299,7 @@ main {
     rgba(63, 63, 70, 1) 35%,
     rgba(193, 193, 200, 1) 100%
   );
-  opacity: 1;
+  opacity: 0;
   animation-name: countdown;
   animation-duration: 6s;
 }
