@@ -28,6 +28,128 @@ h1 {
   font-family: "Orbitron", sans-serif;
 }
 
+/* ? Countdown --------------------------------------- */
+
+.number-container {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(
+    90deg,
+    rgba(6, 6, 18, 1) 0%,
+    rgba(63, 63, 70, 1) 35%,
+    rgba(193, 193, 200, 1) 100%
+  );
+  opacity: 0;
+  animation-name: countdown;
+  animation-duration: 6s;
+}
+
+@keyframes countdown {
+  0% {
+    opacity: 1;
+    z-index: 9;
+  }
+  25% {
+    opacity: 1;
+    z-index: 9;
+  }
+  100% {
+    opacity: 1;
+    z-index: 9;
+  }
+  100% {
+    opacity: 0;
+    z-index: 1;
+  }
+}
+
+.number-circle {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  border: 10px solid #fff;
+  border-radius: 50%;
+}
+
+.countdown span {
+  font-family: "Orbitron";
+  color: #fff;
+  font-size: 12rem;
+}
+
+.countdown3 {
+  animation-name: countdown3;
+  animation-duration: 0.5s;
+  opacity: 0;
+}
+
+@keyframes countdown3 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.countdown2 {
+  animation-name: countdown3;
+  animation-duration: 0.5s;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+@keyframes countdown2 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.countdown1 {
+  animation-name: countdown3;
+  animation-duration: 0.5s;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+@keyframes countdown1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.countdown0 {
+  animation-name: countdown3;
+  animation-duration: 3s;
+  animation-delay: 1.5s;
+  opacity: 0;
+}
+
+@keyframes countdown0 {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 /* ? Main Start -------------------------------------------- */
 main {
   background-image: url(./images/glas_motiv_skyline_hamburg.jpg);
@@ -35,8 +157,7 @@ main {
   background-size: cover;
   width: 100%;
   height: 100%;
-  z-index: 3;
-  opacity: 1;
+  /* z-index: 3; */
 }
 
 /* ? Animations Background / Icon  -------------------------- */
@@ -48,20 +169,19 @@ main {
   animation-name: moewen;
   animation-duration: 6s;
   width: 10%;
-  animation-delay: 10s;
+  animation-delay: 2s;
 }
 
 @keyframes moewen {
   0% {
-    width: 10%;
+    width: 8%;
     opacity: 0;
-    animation-delay: 10s;
   }
 
   100% {
     width: 20%;
     transform: translate(300px, -530px);
-    rotate: 120%;
+    rotate: 220%;
   }
 }
 
@@ -91,26 +211,51 @@ main {
   }
 }
 
-.boat {
+.boat img {
   position: absolute;
   bottom: 10%;
   left: 1%;
   animation-name: boat;
-  animation-duration: 4s;
-  animation-delay: 5s;
+  animation-duration: 5s;
+  animation-delay: 3s;
 }
 
 @keyframes boat {
   0% {
     transform: translate(0);
   }
+
   100% {
-    transform: translateX(1550px);
+    transform: translateX(2000px);
+    opacity: 1;
   }
 }
+
+/* ? Animation LARS WEB-DEV GAMBIT  -----------------------------*/
+
+.slide-fwd-center span {
+  opacity: 1;
+}
+.slide-fwd-center:hover span {
+  animation: slide-fwd-center 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  opacity: 1;
+}
+
+@keyframes slide-fwd-center {
+  0% {
+    transform: translateZ(0);
+    font-size: 0;
+  }
+  100% {
+    transform: translateZ(160px);
+    font-size: 16rem;
+    color: rgb(26, 56, 68);
+  }
+}
+
 /* ? The whole Board itself ---------------------------------------?  */
 .board {
-  position: realtive;
+  position: relative;
   margin: 0px auto;
   display: grid;
   width: 900px;
@@ -122,19 +267,9 @@ main {
   animation-name: board;
   animation-duration: 15s;
   animation-delay: 10s;
-  z-index: 2;
+  z-index: 5;
   opacity: 1;
 }
-/* 
-@keyframes board {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    
-    z-index: 2;
-  }
-} */
 
 /* ? Top & Bottom Row/Column  ----------------------------------------------?  */
 
@@ -279,127 +414,5 @@ main {
     transform: translateZ(160px);
     font-size: 20rem;
     color: rgb(26, 61, 71);
-  }
-}
-
-/* ? Countdown --------------------------------------- */
-
-.number-container {
-  position: absolute;
-  top: 0;
-  z-index: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(
-    90deg,
-    rgba(6, 6, 18, 1) 0%,
-    rgba(63, 63, 70, 1) 35%,
-    rgba(193, 193, 200, 1) 100%
-  );
-  opacity: 0;
-  animation-name: countdown;
-  animation-duration: 6s;
-}
-
-@keyframes countdown {
-  0% {
-    opacity: 1;
-    z-index: 2;
-  }
-  25% {
-    opacity: 1;
-    z-index: 2;
-  }
-  100% {
-    opacity: 1;
-    z-index: 2;
-  }
-  100% {
-    opacity: 0;
-    z-index: 1;
-  }
-}
-
-.number-circle {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 500px;
-  height: 500px;
-  border: 10px solid #fff;
-  border-radius: 50%;
-}
-
-.countdown span {
-  font-family: "Orbitron";
-  color: #fff;
-  font-size: 12rem;
-}
-
-.countdown3 {
-  animation-name: countdown3;
-  animation-duration: 0.5s;
-  opacity: 0;
-}
-
-@keyframes countdown3 {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.countdown2 {
-  animation-name: countdown3;
-  animation-duration: 0.5s;
-  animation-delay: 0.5s;
-  opacity: 0;
-}
-
-@keyframes countdown2 {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.countdown1 {
-  animation-name: countdown3;
-  animation-duration: 0.5s;
-  animation-delay: 1s;
-  opacity: 0;
-}
-
-@keyframes countdown1 {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.countdown0 {
-  animation-name: countdown3;
-  animation-duration: 3s;
-  animation-delay: 1.5s;
-  opacity: 0;
-}
-
-@keyframes countdown0 {
-  0% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 1;
   }
 }
